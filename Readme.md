@@ -1,5 +1,7 @@
 ## gitserve: webserver to serve git archives of any git path  
 
+Creates a webserver that serves on top of git-archive, fetches the repo in the background every 30 seconds. 
+
 #### Installation:
 
 Grab the right precompiled bin from github releases and put it in your path. Don't forget to `chmod +x` the bin.
