@@ -68,7 +68,7 @@ func (ga *GitArchive) HttpHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	treeish := r.URL.Query().Get("tree")
 	if treeish == ""{
-		treeish = "HEAD"
+		treeish = "origin/master"
 	}
 	mimeType := mime.TypeByExtension(ext)
 	w.Header().Set("Content-Type", mimeType)
