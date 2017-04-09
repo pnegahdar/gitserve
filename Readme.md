@@ -8,13 +8,17 @@ Grab the right precompiled bin from github releases and put it in your path. Don
 
 OSX:
 
-    curl -SL https://github.com/pnegahdar/gitserve/releases/download/0.2.0/gitserve_0.2.0_darwin_amd64.tar.gz \
-        | tar -xzC /usr/local/bin --strip 1 && chmod +x /usr/local/bin/gitserve
+```bash
+curl -SL https://github.com/pnegahdar/gitserve/releases/download/0.2.0/darwin_amd64 > /usr/local/bin/gitserve && \
+    chmod +x /usr/local/bin/gitserve 
+```
 
 Nix:
 
-    curl -SL https://github.com/pnegahdar/gitserve/releases/download/0.2.0/gitserve_0.2.0_linux_amd64.tar.gz \
-        | tar -xzC /usr/local/bin --strip 1 && chmod +x /usr/local/bin/gitserve
+```bash
+curl -SL https://github.com/pnegahdar/gitserve/releases/download/0.2.0/linux_amd64 > /usr/local/bin/gitserve && \
+    chmod +x /usr/local/bin/gitserve 
+```
 
 #### Usage:
 
@@ -41,5 +45,8 @@ gitserver -root=/Users/myuser/git/project  -prefix=subdira/ -listen=":9000" -pyp
     curl localhost:9000/projecta/bar.tar?tree=HEAD
                                                
     pip install localhost:9000/projecta.tar?tree=origin/master
+    
+    # If pypi server is enabled
+    pip install --extra-index-url http://127.0.0.1:8020/_pypi-simple package_name==<version>
     
      
